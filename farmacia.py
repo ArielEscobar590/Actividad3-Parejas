@@ -2,6 +2,15 @@
 pila_farmacia = []
 cola_medicamento = []
 medicina = ""
+op =int(input())
+print("Ingreso Medicamento")
+print("entrega de medicamento")
+print("mostrar Pila actual")
+print("salir")
+match op!=4:
+    case 1 :
+
+
 
 while medicina != "salir":
     medicina = input("Ingrese nombre del medicamento (o escriba 'salir' para terminar): ")
@@ -20,4 +29,5 @@ print("\nMedicamentos ingresados (Pila):")
 print(pila_farmacia)
 
 print("\nDespacho de medicamentos (Cola):")
-print(cola_medicamento)
+print(cola_invertida)
+
