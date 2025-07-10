@@ -18,25 +18,33 @@ class Cliente:
         self.clientes.remove(cliente)
 
 
-def main():
+def menu():
     while True:
-        cli = cliente()
-        print("--- Recepcion ---")
-        print("1. Agregar Cliente")
-        print("2. Listar Clientes")
-        print("3. Atender Clientes")
-        print("4. Salir")
-        op = input("Ingrese una opcion: ")
-        if op == "1":
-            nombre = input("Ingrese el nombre del cliente: ")
-            edad = input("Ingrese el edad del cliente: ")
-            padeciemiento = input("Ingrese el padeciemiento del cliente: ")
-            cliente = Cliente(nombre, edad, padeciemiento)
-        elif op == "2":
-            cli.listaClientes()
-        elif op == "3":
-            cli.eliminarCliente(cliente)
-        elif op == "4":
-            print("Gracias por usar el sistema. Nos vemos")
-            break
-
+        try:
+            print("--- Recepcion ---")
+            print("1. Agregar Cliente")
+            print("2. Listar Clientes")
+            print("3. Atender Clientes")
+            print("4. Salir")
+            op = input("Ingrese una opcion: ")
+            if op == "1":
+                nombre = input("Ingrese el nombre del cliente: ")
+                edad = input("Ingrese el edad del cliente: ")
+                padeciemiento = input("Ingrese el padeciemiento del cliente: ")
+                cliente = Cliente(nombre, edad, padeciemiento)
+            elif op == "2":
+                if(cliente.clientes > 0):
+                   cliente.listaClientes()
+                else:
+                    print("No hay clientes ")
+            elif op == "3":
+                if(cliente.clientes > 0):
+                   eliminarCliente(cliente)
+                else:
+                    print("No hay clientes para Atender")
+            elif op == "4":
+                print("Gracias por usar el sistema. Nos vemos")
+                break
+        except:
+            print("Ingreso no valida")
+menu()
