@@ -15,7 +15,25 @@ class Cliente:
             a += 1
 
 def main():
-    nombre = input("Ingrese el nombre del cliente: ")
-    edad = input("Ingrese el edad del cliente: ")
-    padeciemiento = input("Ingrese el padeciemiento del cliente: ")
-    cliente = Cliente(nombre, edad, padeciemiento)
+    while True:
+        cli = cliente()
+        print("--- Recepcion ---")
+        print("1. Agregar Cliente")
+        print("2. Listar Clientes")
+        print("3. Atender Clientes")
+        print("4. Salir")
+        op = input("Ingrese una opcion: ")
+        if op == "1":
+            nombre = input("Ingrese el nombre del cliente: ")
+            edad = input("Ingrese el edad del cliente: ")
+            padeciemiento = input("Ingrese el padeciemiento del cliente: ")
+            cliente = Cliente(nombre, edad, padeciemiento)
+        elif op == "2":
+            cli.listaClientes()
+        elif op == "3":
+            print(f"Atendiendo al Cliente")
+        elif op == "4":
+            print("Gracias por usar el sistema. Nos vemos")
+            break
+
+
