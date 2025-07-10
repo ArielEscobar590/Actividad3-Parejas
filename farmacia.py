@@ -14,6 +14,7 @@ while medicina != "salir":
 # Transferir de la pila a la cola (en el mismo orden que se ingresaron)
 for i in pila_farmacia:
     cola_medicamento.append(i)
+    cola_invertida = cola_medicamento[::-1]
 
 print("\nMedicamentos ingresados (Pila):")
 print(pila_farmacia)
