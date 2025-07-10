@@ -3,22 +3,33 @@ class Cliente:
         self.nombre = nombre
         self.edad = edad
         self.padeciemiento = padeciemiento
-        self.clientes = []
+
+class Recepcion:
+    def __init__(self):
+        self.listaclientes = []
 
     def agregarCliente(self, cliente):
-        self.clientes.append(cliente)
+        self.listaclientes.append(cliente)
+        print("Cliente agregada exitosamente")
 
     def listaClientes(self):
-        for cliente in self.clientes:
-            a = 1
-            print(f"{a}) {cliente.nombre}, {cliente.edad}, {cliente.padeciemiento}")
-            a += 1
+        if(len(self.listaclientes) < 0):
+            print("No hay clientes")
+        else:
+            for cliente in self.listaclientes:
+                a = 1
+                print(f"{a}) {cliente.nombre}, {cliente.edad}, {cliente.padeciemiento}")
+                a += 1
 
-    def eliminarCliente(self, cliente):
-        self.clientes.remove(cliente)
+    def eliminarCliente(self):
+        if(len(self.listaclientes) < 0):
+            print("No hay clientes para atender")
+        else:
+            self.listaclientes.remove(0)
 
 
 def menu():
+    recepcion = Recepcion()
     while True:
         try:
             cliente0 = Cliente(0,0,0)
@@ -33,16 +44,11 @@ def menu():
                 edad = input("Ingrese el edad del cliente: ")
                 padeciemiento = input("Ingrese el padeciemiento del cliente: ")
                 cliente = Cliente(nombre, edad, padeciemiento)
+                recepcion.agregarCliente(cliente)
             elif op == "2":
-                if(cliente0.clientes > 0):
                    cliente0.listaClientes()
-                else:
-                    print("No hay clientes ")
             elif op == "3":
-                if(cliente0.clientes > 0):
-                   print("hola")
-                else:
-                    print("No hay clientes para Atender")
+                   cliente0.eliminarCliente()
             elif op == "4":
                 print("Gracias por usar el sistema. Nos vemos")
                 break
