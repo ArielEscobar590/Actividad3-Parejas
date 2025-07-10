@@ -7,10 +7,6 @@ print("Ingreso Medicamento")
 print("entrega de medicamento")
 print("mostrar Pila actual")
 print("salir")
-match op!=4:
-    case 1 :
-
-
 
 while medicina != "salir":
     medicina = input("Ingrese nombre del medicamento (o escriba 'salir' para terminar): ")
