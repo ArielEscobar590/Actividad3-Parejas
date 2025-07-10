@@ -21,6 +21,7 @@ class Cliente:
 def menu():
     while True:
         try:
+            cliente0 = Cliente(0,0,0)
             print("--- Recepcion ---")
             print("1. Agregar Cliente")
             print("2. Listar Clientes")
@@ -33,13 +34,13 @@ def menu():
                 padeciemiento = input("Ingrese el padeciemiento del cliente: ")
                 cliente = Cliente(nombre, edad, padeciemiento)
             elif op == "2":
-                if(cliente.clientes > 0):
-                   cliente.listaClientes()
+                if(cliente0.clientes > 0):
+                   cliente0.listaClientes()
                 else:
                     print("No hay clientes ")
             elif op == "3":
-                if(cliente.clientes > 0):
-                   eliminarCliente(cliente)
+                if(cliente0.clientes > 0):
+                   print("hola")
                 else:
                     print("No hay clientes para Atender")
             elif op == "4":
