@@ -1,19 +1,22 @@
 
-pila_farmacia =[]
-cola_medicamento=[]
-medicina =""
-while medicina !="salir":
-    medicina = input("ingrese lista de medicamento")
-    if medicina == "salir":
-          print("salir de ingreso")
-    else:
-       pila_farmacia.append(medicina)
-       print("ingreso con éxito")
+pila_farmacia = []
+cola_medicamento = []
+medicina = ""
 
+while medicina != "salir":
+    medicina = input("Ingrese nombre del medicamento (o escriba 'salir' para terminar): ")
+    if medicina == "salir":
+        print("Saliendo del ingreso de medicamentos.")
+    else:
+        pila_farmacia.append(medicina)
+        print("Ingreso con éxito.")
+
+# Transferir de la pila a la cola (en el mismo orden que se ingresaron)
 for i in pila_farmacia:
     cola_medicamento.append(i)
 
-print("medicamento ingresado")
+print("\nMedicamentos ingresados (Pila):")
 print(pila_farmacia)
-print("despacho de medicamento")
+
+print("\nDespacho de medicamentos (Cola):")
 print(cola_medicamento)
