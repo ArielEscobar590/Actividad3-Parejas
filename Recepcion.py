@@ -13,7 +13,7 @@ class Recepcion:
         print("Cliente agregada exitosamente")
 
     def listaClientes(self):
-        if(len(self.listaclientes) < 0):
+        if(len(self.listaclientes) == 0):
             print("No hay clientes")
         else:
             for cliente in self.listaclientes:
@@ -22,17 +22,18 @@ class Recepcion:
                 a += 1
 
     def eliminarCliente(self):
-        if(len(self.listaclientes) < 0):
+        if(len(self.listaclientes) == 0):
             print("No hay clientes para atender")
         else:
-            self.listaclientes.remove(0)
+            print(f"{self.listaclientes[0].nombre} ha sido atendido exitosamente")
+            del self.listaclientes[0]
+
 
 
 def menu():
     recepcion = Recepcion()
     while True:
         try:
-            cliente0 = Cliente(0,0,0)
             print("--- Recepcion ---")
             print("1. Agregar Cliente")
             print("2. Listar Clientes")
@@ -46,9 +47,9 @@ def menu():
                 cliente = Cliente(nombre, edad, padeciemiento)
                 recepcion.agregarCliente(cliente)
             elif op == "2":
-                   cliente0.listaClientes()
+                   recepcion.listaClientes()
             elif op == "3":
-                   cliente0.eliminarCliente()
+                   recepcion.eliminarCliente()
             elif op == "4":
                 print("Gracias por usar el sistema. Nos vemos")
                 break
