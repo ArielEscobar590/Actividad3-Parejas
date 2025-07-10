@@ -3,9 +3,12 @@ pila_farmacia =[]
 cola_medicamento=[]
 medicina =""
 while medicina !="salir":
-   medicina=string(imput("ingrese lista de medicamento"))
-   pila_farmacia.append(medicina)
-   print("ingreso con éxito")
+    medicina = input("ingrese lista de medicamento")
+    if medicina == "salir":
+          print("salir de ingreso")
+    else:
+       pila_farmacia.append(medicina)
+       print("ingreso con éxito")
 
 for i in pila_farmacia:
     cola_medicamento.append(i)
