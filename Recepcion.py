@@ -14,6 +14,10 @@ class Cliente:
             print(f"{a}) {cliente.nombre}, {cliente.edad}, {cliente.padeciemiento}")
             a += 1
 
+    def eliminarCliente(self, cliente):
+        self.clientes.remove(cliente)
+
+
 def main():
     while True:
         cli = cliente()
@@ -31,9 +35,8 @@ def main():
         elif op == "2":
             cli.listaClientes()
         elif op == "3":
-            print(f"Atendiendo al Cliente")
+            cli.eliminarCliente(cliente)
         elif op == "4":
             print("Gracias por usar el sistema. Nos vemos")
             break
-
 
